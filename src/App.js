@@ -1,7 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import apiClient from 'utils/apiClient.js';
 
 function App() {
+
+  const user = {
+    "name": "david",
+    "job": "david"
+  };
+
+  apiClient.get("https://reqres.in/api/users/2").then((users) => console.log(users.data));
+  apiClient.post("https://reqres.in/api/users", user).then((data) => console.log(data));
+
   return (
     <div className="App">
       <header className="App-header">

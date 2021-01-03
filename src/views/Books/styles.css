@@ -48,5 +48,9 @@ nav {
   transform: translate(-50%, 20%);
 }
 
+#categoriesSelector{
+  position: relative;
+  left: 40%;
+}
 
 

@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React from 'react';
 import PropTypes from 'prop-types';
 import BookItem from 'components/items/BookItem';
 
@@ -6,8 +6,8 @@ import BookItem from 'components/items/BookItem';
 
 import "./styles.css";
 
-function BooksView({data}){
-  
+function BooksView({books, categories, handleOnChangeCategory}){
+
 
   function generateBookItem(book) {
     return (
@@ -16,16 +16,22 @@ function BooksView({data}){
   }
 
   return (
-
-    <ul>
-       {data.map((book) => <li key={book.id}> {generateBookItem(book)} </li>)}
-    </ul>
-
+    <div>
+      <select id="categoriesSelector" onChange={handleOnChangeCategory}>
+        <option value="TODOS">Todas</option>
+        {categories.map((category) => <option value={category.id} key={category.id}> {category.name} </option>)}
+      </select>
+      <ul>
+        {books.map((book) => <li key={book.id}> {generateBookItem(book)} </li>)}
+      </ul>
+    </div>
   );
 }
 
 export default BooksView;
 
 BooksView.propTypes = {
-  data: PropTypes.object,
+  books: PropTypes.array,
+  categories: PropTypes.array,
+  handleOnChangeCategory: PropTypes.func
 };

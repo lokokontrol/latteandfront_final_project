@@ -19,7 +19,7 @@ function Home() {
   }
 
   return (
-    <HomeView palabraIntroducida = {magicWord} handleSubmit={handleSubmit} handleInputChange={handleInputChange} error = {error}  />
+    <HomeView palabraIntroducida={magicWord} handleSubmit={handleSubmit} handleInputChange={handleInputChange} error = {error}  />
   );
   
 }

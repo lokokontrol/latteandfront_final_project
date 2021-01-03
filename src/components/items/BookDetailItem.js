@@ -3,7 +3,6 @@ import { Card } from '../ui/Card';
 import PropTypes from 'prop-types';
 
 
-
 function BookDetailItem({book}) {
 
   return (

@@ -2,12 +2,13 @@ import { BrowserRouter,Switch} from "react-router-dom";
 import PrivateRoute from 'components/router/PrivateRoute';
 import PublicRoute from 'components/router/PublicRoute';
 import './App.css';
-import { HOME, BOOKS, BOOK_DETAIL, BOOK_DELETE, BOOK_UPDATE, CATEGORIES,CATEGORY_DETAIL, CATEGORY_DELETE, CATEGORY_UPDATE, LOGOUT } from "config/router/paths";
+import { HOME, BOOKS, BOOK_DETAIL, BOOK_DELETE, BOOK_UPDATE, BOOK_CREATE, CATEGORIES, CATEGORY_DETAIL, CATEGORY_DELETE, CATEGORY_UPDATE, LOGOUT } from "config/router/paths";
 import Home from 'views/Home/Home';
 import Books from 'views/Books/Books';
 import BookDetail from 'views/BookDetail/BookDetail';
 import BookDelete from 'views/BookDelete/BookDelete';
 import BookUpdate from 'views/BookUpdate/BookUpdate';
+import BookCreate from 'views/BookCreate/BookCreate';
 import Categories from 'views/Categories/Categories';
 import CategoryDetail from 'views/CategoryDetail/CategoryDetail';
 import CategoryDelete from 'views/CategoryDelete/CategoryDelete';
@@ -28,6 +29,7 @@ function App() {
           <PrivateRoute path={BOOK_DETAIL} component={BookDetail} exact/>
           <PrivateRoute path={BOOK_DELETE} component={BookDelete} exact />
           <PrivateRoute path={BOOK_UPDATE} component={BookUpdate} exact/>
+          <PrivateRoute path={BOOK_CREATE} component={BookCreate} exact/>
           <PrivateRoute path={CATEGORIES} component={Categories} exact/>
           <PrivateRoute path={CATEGORY_DETAIL} component={CategoryDetail} exact/>
           <PrivateRoute path={CATEGORY_DELETE} component={CategoryDelete} exact/>

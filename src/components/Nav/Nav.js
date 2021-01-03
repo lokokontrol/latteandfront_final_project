@@ -26,8 +26,6 @@ function Nav() {
   } else {
     return null;
   }
-
-  
 }
 
 export default Nav;

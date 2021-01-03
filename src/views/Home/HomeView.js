@@ -11,13 +11,15 @@ const theme = {
 function HomeView({palabraIntroducida, handleSubmit, handleInputChange, error}){
     return (
         <div>
-          <form onSubmit = {handleSubmit}>
+          
+          <form className="formLogin" onSubmit = {handleSubmit}>
+            <span>{error}</span>
             <input type ="text" value={palabraIntroducida} onChange={handleInputChange} />
             <ThemeProvider theme={theme}>
             <Button type="submit"> Iniciar sesion</Button>
             </ThemeProvider>
+            
           </form>
-        {error}
         </div>
     );
 }

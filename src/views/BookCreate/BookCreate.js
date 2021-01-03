@@ -22,9 +22,11 @@ function BookCreate(){
     if (currentCategoryId > -1){
       const categorySelectedToCreate = categories.filter((category) => category.id === parseInt(currentCategoryId));
       console.log(categorySelectedToCreate);
-      const categoryWithOutId = {name : categorySelectedToCreate[0].name};
+      const category = {id: categorySelectedToCreate[0].id,
+                                  name : categorySelectedToCreate[0].name
+                                 };
       var categoryArrayFormat = [];
-      categoryArrayFormat.push(categoryWithOutId);
+      categoryArrayFormat.push(category);
       return categoryArrayFormat;
     }
   }

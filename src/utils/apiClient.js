@@ -39,6 +39,18 @@ const apiClient = {
     } catch (error) {
       console.log(error);
     }
+  },
+  delete: async function(url) {
+    try {
+      const response = await fetch(url, {
+        method: 'DELETE',
+        headers
+      });
+      const json = await response.json();
+      return json;
+    } catch (error) { 
+      console.log(error);
+    }
   }
 };
 

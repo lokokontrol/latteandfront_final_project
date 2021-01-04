@@ -10,6 +10,7 @@ function Books() {
   const [categories, setCategories] = useState(null);
   const [currentCategoryId, setCurrentCategoryId] = useState(-1);
 
+
   const booksToShow = useMemo(
     function() {
       if (!books) {

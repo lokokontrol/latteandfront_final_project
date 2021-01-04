@@ -5,22 +5,26 @@ import Button from 'components/ui/Button';
 function BookCreateView({bookTitle, bookImage, imagePreview, categories,  handleSubmit, handleInputChange, handleImageChange, handleOnChangeCategory, error }){
   return (
       <div>
-        <form onSubmit = {handleSubmit}>
-          <input type ="text" value={bookTitle} onChange={handleInputChange}/>
+        
+        <form className="formLogin" onSubmit = {handleSubmit}>
+          <p>Vamos a crear un Libro!</p>
+          <label for="bookTitle">Elige un título:</label>
+          <input type ="text" id="bookTitle" value={bookTitle} onChange={handleInputChange}/>
           <input type="file" onChange={handleImageChange}/>
-          
+          <label for="categoriesSelector">Elige una categoria:</label>
           <select id="categoriesSelector" onChange={handleOnChangeCategory}>
             <option value="TODOS">Todas</option>
             {categories.map((category) => <option value={category.id} key={category.id}> {category.name} </option>)}
           </select>
           <Button type="submit"> Crea Libro</Button>
-        </form>
-        {error}
-        {bookImage && (
+          {bookImage && (
             <div>
               <img src={imagePreview} />
             </div>
           )}
+        </form>
+        {error}
+        
       </div>
   );
 }
